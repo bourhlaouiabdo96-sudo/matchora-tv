@@ -67,3 +67,31 @@ body,.sales-site{font-family:var(--font-body);background:var(--bg);color:var(--t
 @media(max-width:1100px){.sales-hero{gap:35px}.sales-hero h1{font-size:50px}.sales-plan-price{font-size:33px}.sales-plan h3{font-size:22px}}
 @media(max-width:800px){.sales-hero{gap:24px;padding-block:40px 55px}.sales-hero:before{inset:15px -8px}.sales-hero h1{font-size:clamp(42px,7vw,58px)}.sales-brand>span:last-child{font-size:21px}.sales-screen-scene>strong{font-size:31px}.sales-plan-price{font-size:38px}}
 @media(max-width:480px){.sales-hero{padding-block:33px 50px}.sales-hero:before{inset:12px -8px}.sales-hero h1{font-size:42px;letter-spacing:-1.5px}.sales-hero-copy>p{font-size:14px}.sales-brand>span:last-child{font-size:19px}.sales-brand-mark{font-size:30px}.sales-plan h3{font-size:28px}.sales-plan-price{font-size:43px}.sales-plan .sales-button{font-size:13px}.sales-screen-scene>strong{font-size:28px}.sales-step p{font-size:14px}.sales-section-heading>p{font-size:13px}.sales-faq summary{font-size:15px}}
+/* Gentle green hover glow, lift and press feedback. */
+.sales-plan,.sales-step,.sales-selection,.sales-order-form,.sales-closing{transition:transform .24s cubic-bezier(.2,.7,.3,1),border-color .24s ease,box-shadow .24s ease,background .24s ease}
+.sales-step{padding:25px;border:1px solid #304359;border-radius:12px;background:radial-gradient(ellipse at 0 0,#b1ee6506,transparent 75%),var(--panel)}
+.sales-step-number{display:inline-grid;place-items:center;min-width:43px;height:43px;padding:0 9px;border:1px solid #b1ee6526;border-radius:11px;background:#b1ee650a;color:var(--green);transition:box-shadow .24s,background .24s}
+.sales-site .sales-button{transition:transform .18s ease,box-shadow .22s ease,border-color .22s ease,background .22s ease}
+.sales-plan:focus-within,.sales-order-form:focus-within{border-color:var(--green);box-shadow:0 0 0 1px #b1ee6526,0 0 27px #b1ee650d}
+.sales-plan.is-selected:focus-within{box-shadow:inset 0 0 0 1px var(--green),0 0 30px #b1ee6517}
+.sales-site .sales-button:active{transform:translateY(1px) scale(.98);transition-duration:.09s}
+@media(hover:hover) and (pointer:fine){
+ .sales-site .sales-plan:hover,.sales-site .sales-step:hover{transform:translateY(-6px) scale(1.008);border-color:var(--green);box-shadow:0 15px 35px #0004,0 0 0 1px #b1ee6524,0 0 30px #b1ee6514,inset 0 1px 0 #b1ee6524}
+ .sales-site .sales-plan.is-selected:hover{box-shadow:inset 0 0 0 1px var(--green),0 15px 35px #0004,0 0 32px #b1ee6520}
+ .sales-step:hover .sales-step-number{background:#b1ee6517;box-shadow:0 0 24px #b1ee6520}
+ .sales-selection:hover,.sales-closing:hover{border-color:#b1ee6580;box-shadow:0 0 30px #b1ee650e}
+ .sales-primary:hover{transform:translateY(-2px);box-shadow:0 8px 25px #b1ee6528,0 0 18px #b1ee6514}
+ .sales-outline:hover{transform:translateY(-2px);box-shadow:0 5px 22px #b1ee6514}
+ .sales-site .sales-button:active{transform:translateY(1px) scale(.98);box-shadow:0 1px 10px #b1ee6515}
+ .sales-faq summary:hover{color:var(--green)}
+}
+@media(max-width:480px){.sales-step{padding:22px}}
+@media(prefers-reduced-motion:reduce){
+ .sales-site .sales-plan,.sales-site .sales-step,.sales-selection,.sales-order-form,.sales-closing,.sales-step-number,.sales-site .sales-button{transition:none}
+ .sales-site .sales-plan:hover,.sales-site .sales-step:hover,.sales-site .sales-button:hover,.sales-site .sales-button:active{transform:none}
+}
+@media(hover:none),(pointer:coarse){
+ .sales-site .sales-plan:hover,.sales-site .sales-primary:hover,.sales-site .sales-outline:hover{transform:none}
+ .sales-site .sales-button:active{transform:translateY(1px) scale(.98)}
+}
+@media(prefers-reduced-motion:reduce){.sales-site .sales-button:active{transform:none}}
