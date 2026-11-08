@@ -1,0 +1,13 @@
+/* MATCHORA visual identity, kept local so both sites deploy independently. */
+:root {
+  --bg: #0b111c;
+  --panel: #111925;
+  --panel2: #151f2d;
+  --line: #222c3b;
+  --text: #edf2f6;
+  --muted: #8290a5;
+  --green: #b1ee65;
+  --bright: #a4e657;
+  --font-body: "Segoe UI", Tahoma, Arial, sans-serif;
+  --font-heading: Arial, Tahoma, sans-serif;
+}
