@@ -122,3 +122,4 @@ body,.sales-site{font-family:var(--font-body);background:var(--bg);color:var(--t
 .sales-footer{padding-bottom:105px}
 @media(max-width:480px){.sales-contact-dock{right:12px;bottom:max(12px,env(safe-area-inset-bottom));gap:7px;padding:5px}.sales-contact-dock a{width:42px;height:42px}.sales-contact-buttons a{font-size:11px!important}}
 @media(prefers-reduced-motion:reduce){.sales-plan:before,.sales-step:before,.sales-selection:before,.sales-screen:after{transition:none}.sales-site .sales-plan:hover,.sales-site .sales-step:hover,.sales-site .sales-plan.is-selected:hover,.sales-contact-dock a:hover{transform:none}}
+.sales-contact-dock .sales-contact-email{background:#1b2939;border-color:#455d77;color:#d4e3f1}
