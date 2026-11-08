@@ -95,3 +95,30 @@ body,.sales-site{font-family:var(--font-body);background:var(--bg);color:var(--t
  .sales-site .sales-button:active{transform:translateY(1px) scale(.98)}
 }
 @media(prefers-reduced-motion:reduce){.sales-site .sales-button:active{transform:none}}
+/* Visible illumination inside the card and a clear green edge light. */
+.sales-plan,.sales-step,.sales-selection{position:relative;isolation:isolate}
+.sales-plan:before,.sales-step:before,.sales-selection:before{content:'';position:absolute;inset:0;z-index:-1;border-radius:inherit;background:radial-gradient(ellipse at 50% 0,#b1ee654d,transparent 72%);opacity:0;transition:opacity .24s ease;pointer-events:none}
+.sales-plan:focus-within:before,.sales-selection:focus-within:before{opacity:1}
+.sales-screen:after{content:'';position:absolute;inset:0;z-index:3;pointer-events:none;border-radius:inherit;background:radial-gradient(ellipse at 50% 25%,#b1ee6538,transparent 76%);opacity:0;transition:opacity .24s ease}
+@media(hover:hover) and (pointer:fine){
+ .sales-site .sales-plan:hover,.sales-site .sales-plan.is-selected:hover,.sales-site .sales-step:hover{transform:translateY(-3px);border-color:var(--green);box-shadow:0 0 0 1px #b1ee6566,0 0 25px #b1ee6540,0 14px 30px #0004,inset 0 0 20px #b1ee650a}
+ .sales-plan:hover:before,.sales-step:hover:before,.sales-selection:hover:before{opacity:1}
+ .sales-hero-art:hover .sales-screen{border-color:var(--green);box-shadow:0 0 28px #b1ee6540,15px 30px 65px #0008}
+ .sales-hero-art:hover .sales-screen:after{opacity:1}
+ .sales-hero-art:hover .sales-scene-sun{background:#b1ee651a;box-shadow:0 0 30px #b1ee6570,0 0 0 6px #b1ee6512}
+ .sales-step:hover .sales-step-number{box-shadow:0 0 28px #b1ee6555;background:#b1ee6526}
+}
+@media(hover:none),(pointer:coarse){.sales-plan:active:before,.sales-step:active:before{opacity:1}.sales-site .sales-plan:active,.sales-site .sales-step:active{border-color:var(--green);box-shadow:0 0 22px #b1ee6530}}
+.visually-hidden{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.sales-contact-buttons{display:flex!important;flex-wrap:wrap;gap:10px!important;align-items:center!important}
+.sales-contact-buttons a{display:inline-flex!important;align-items:center;gap:8px;padding:9px 12px;border:1px solid #3a4d63;border-radius:7px;background:#142232;color:var(--text)!important;font-size:12px!important;line-height:1.4}
+.sales-contact-buttons .sales-contact-whatsapp{border-color:#b1ee6555;color:var(--green)!important}
+.sales-contact-buttons a:hover{border-color:var(--green);box-shadow:0 0 18px #b1ee651a}
+.sales-contact-buttons .sales-contact-telegram svg{color:#7fc3ff}
+.sales-contact-dock{position:fixed;z-index:50;right:20px;bottom:max(20px,env(safe-area-inset-bottom));display:flex;gap:10px;padding:6px;border:1px solid #344457;background:#0b111ced;backdrop-filter:blur(8px);border-radius:40px;box-shadow:0 6px 28px #0006}
+.sales-contact-dock a{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;border:1px solid #4b6b3b;background:#203726;color:var(--green)}
+.sales-contact-dock .sales-contact-telegram{background:#142d46;border-color:#365f86;color:#91cdff}
+.sales-contact-dock a:hover{box-shadow:0 0 20px #b1ee6540;border-color:var(--green);transform:translateY(-2px)}
+.sales-footer{padding-bottom:105px}
+@media(max-width:480px){.sales-contact-dock{right:12px;bottom:max(12px,env(safe-area-inset-bottom));gap:7px;padding:5px}.sales-contact-dock a{width:42px;height:42px}.sales-contact-buttons a{font-size:11px!important}}
+@media(prefers-reduced-motion:reduce){.sales-plan:before,.sales-step:before,.sales-selection:before,.sales-screen:after{transition:none}.sales-site .sales-plan:hover,.sales-site .sales-step:hover,.sales-site .sales-plan.is-selected:hover,.sales-contact-dock a:hover{transform:none}}

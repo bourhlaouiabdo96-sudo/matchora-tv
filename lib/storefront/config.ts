@@ -1,5 +1,6 @@
 import {site} from '../config';
-export const storefront={name:site.name,email:site.contactEmail,whatsapp:'212631950008',currency:'USD' as const};
+export function telegramLink(input:string|undefined):string|null{if(!input?.trim())return null;const value=input.trim();try{const url=new URL(value.startsWith('@')?`https://t.me/${value.slice(1)}`:value);if(url.protocol!=='https:'||url.hostname!=='t.me'||url.username||url.password||url.port||!/^\/(?:[a-zA-Z0-9_]{5,32}|\+[a-zA-Z0-9_-]{5,})\/?$/.test(url.pathname))return null;return `https://t.me${url.pathname.replace(/\/$/,'')}`}catch{return null}}
+export const storefront={name:site.name,email:site.contactEmail,whatsapp:'212631950008',telegram:telegramLink(process.env.NEXT_PUBLIC_TELEGRAM_URL||'https://t.me/+212624099688'),currency:'USD' as const};
 export const salesLocales=['en','de','es','fr'] as const;
 export type SalesLocale=typeof salesLocales[number];
 export const salesPath=(locale:SalesLocale)=>locale==='en'?'/':`/${locale}`;
